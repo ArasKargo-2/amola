@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Kedi Platform Oyunu</title>
+  <style>
+    html, body { height:100%; margin:0; padding:0; overflow:hidden; background:#87ceeb;}
+    body { width:100vw; height:100vh;}
+    #canvas { display:block; position:fixed; left:0; top:0; z-index:1; }
+    #ui {
+      position:absolute; left:24px; top:24px; z-index:10;
+      color:#222; font-family:sans-serif;
+      background:rgba(255,255,255,0.4); padding:8px 18px; border-radius:8px;
+      user-select: none;
+    }
+    #healthbar-bg {
+      width:220px; height:24px; background:#ddd;
+      border:2px solid #999; border-radius:12px;
+      margin-bottom:5px; margin-top:5px;
+    }
+    #healthbar {
+      height:100%; background:linear-gradient(90deg,#28d66a,#f7dc4a,#e33d3d);
+      border-radius:12px; transition:width 0.2s; box-shadow:0 0 6px #f00a;
+    }
+    #footer {
+      position:absolute; left:50%; bottom:16px; transform:translateX(-50%);
+      color:#fff; font-family:monospace; font-size:15px; opacity:0.7; z-index:20;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <div id="ui">
+    <div id="healthbar-bg"><div id="healthbar"></div></div>
+    <span id="healthtxt">Can: 100</span> |
+    <span id="foodtxt">Mama: 0</span>
+  </div>
+  <div id="footer">
+    W/Yukarı/Space: Zıpla &nbsp; A/D: Yürü &nbsp; S: Mama Ye <br>
+    ⛳ Yukarı çık ve bitişe ulaş!
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
